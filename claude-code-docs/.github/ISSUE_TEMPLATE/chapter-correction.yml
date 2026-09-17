@@ -1,0 +1,67 @@
+name: Chapter correction / 章节纠错
+description: A passage contradicts the actual source behavior, a number is wrong, or a module's responsibility is misdescribed
+title: "[correction] "
+labels: ["correction", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Factual corrections are the highest-priority issue type here. A teardown that states something wrong gets quoted downstream as a conclusion, so thank you for catching it.
+
+        修正事实性错误是本仓库优先级最高的 issue。源码解读一旦写错，会被读者当结论引用。
+
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: Chapter / 章节
+      options:
+        - "01 — Architecture Overview / 架构总览"
+        - "02 — Value Debate / 源码泄露的价值之争"
+        - "03 — Agent Loop / Agent 循环"
+        - "04 — Context Engineering / 上下文工程"
+        - "05 — Compaction System / 消息压缩系统"
+        - "06 — Permission System / 权限系统"
+        - "07 — Memory System / 记忆管理"
+        - "08 — Tools and Skills / 工具与 Skill 系统"
+        - "09 — MCP Integration / MCP 集成"
+        - "10 — Future Features / 未来功能蓝图"
+        - "11 — AI Code Review / AI Coding 时代的 Code Review"
+        - "12 — Agent Security Design / 从权限系统学 Agent 安全设计"
+        - "13 — Source Code Findings / 啃完源码之后的一些发现"
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Which language version / 哪个语言版本
+      description: Chinese, English, or both
+      placeholder: both
+    validations:
+      required: true
+
+  - type: textarea
+    id: quote
+    attributes:
+      label: Quote the passage / 引用原文
+      description: Copy the sentence or table row as it currently reads, and say which section it is in.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say / 正确的描述是什么
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / 证据
+      description: |
+        Required. Any one of: a source file path plus symbol name, reproducible steps that demonstrate the behavior, or a link to official documentation. An issue without evidence will be sent back before it can be acted on.
+
+        必填。三者任一即可：源码文件路径 + 符号名 / 可复现的操作步骤 / 官方文档链接。没有证据的 issue 会被要求补充后才处理。
+    validations:
+      required: true

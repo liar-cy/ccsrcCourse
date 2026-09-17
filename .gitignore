@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.swp
+*~
+
+node_modules/
+*.log
+.cache/
+
+# The readable source and source map are retained; avoid duplicate archives
+# and platform-specific binaries in this learning repository.
+claude-code-sourcemap/*.tgz
+claude-code-sourcemap/package/vendor/
+claude-code-sourcemap/restored-src/node_modules/

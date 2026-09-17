@@ -1,0 +1,26 @@
+name: docs-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Catch rot that arrives without anyone touching the repo.
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate links and link conventions
+        run: python3 scripts/check_links.py
+
+      - name: Validate bilingual chapter parity
+        run: python3 scripts/check_bilingual.py

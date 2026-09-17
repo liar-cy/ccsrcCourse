@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the docs online / 在线阅读
+    url: https://anneheartrecord.github.io/claude-code-docs/
+    about: The published site, with search across all 13 chapters.
+  - name: Contributing guide / 贡献指南
+    url: https://github.com/anneheartrecord/claude-code-docs/blob/main/CONTRIBUTING.md
+    about: What corrections are wanted, and the evidence bar for a factual correction.

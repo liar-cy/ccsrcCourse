@@ -1,0 +1,50 @@
+name: Version drift / 版本漂移
+description: Upstream changed, and a chapter now describes a mechanism that no longer exists
+title: "[drift] "
+labels: ["version-drift", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The analysis was performed against a specific source snapshot — see the version coverage table in the README. Upstream moves; chapters go stale. Reporting drift is how this stays honest.
+
+        本仓库的分析基于某个特定的源码快照（见 README 的版本覆盖表）。上游会变，章节会过时。报告漂移是这份文档保持诚实的方式。
+
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter / 章节
+      placeholder: "06 — Permission System"
+    validations:
+      required: true
+
+  - type: textarea
+    id: described
+    attributes:
+      label: What the chapter describes / 章节里怎么写的
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What upstream does now / 上游现在的行为
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version you observed this in / 你观察到的版本
+      description: Output of `claude --version`, or the npm version.
+      placeholder: "2.1.227"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / 证据
+      description: Source path plus symbol, reproducible steps, changelog entry, or official documentation.
+    validations:
+      required: true

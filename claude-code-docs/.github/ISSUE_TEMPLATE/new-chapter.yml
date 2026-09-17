@@ -1,0 +1,42 @@
+name: New chapter proposal / 新章节提议
+description: Propose a module or theme that deserves its own teardown
+title: "[chapter] "
+labels: ["new-chapter", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals are welcome; whole AI-generated chapters submitted as pull requests are not. Open this first so the scope and the angle can be agreed on.
+
+        欢迎提议新章节；但不接受直接提交 AI 生成的整章 PR。先开这个 issue，把范围和切入角度谈好。
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic / 主题
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it deserves a chapter / 为什么值得单开一章
+      description: What would a reader building an agent product be able to do afterward that they cannot do now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: What the chapter would cover / 章节大致覆盖什么
+      description: Rough section list is enough.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: overlap
+    attributes:
+      label: Overlap check / 重叠检查
+      options:
+        - label: I have read the existing 13 chapters and this is not already covered
+          required: true
